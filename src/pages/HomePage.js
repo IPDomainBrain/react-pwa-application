@@ -7,8 +7,10 @@ import { useNavigate } from "react-router";
 
 const HomePage = () => {
   const [isLoactionLoaded, setisLoactionLoaded] = useState();
+    // eslint-disable-next-line no-console
   const [otp, setOTP] = useState();
   const navigate = useNavigate();
+  console.log('otp',otp)
 
   useEffect(() => {
     if ("OTPCredential" in window) {
@@ -43,21 +45,21 @@ const HomePage = () => {
     showNotification("Test Notification");
   };
 
-  const accessCamera = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: false,
-        video: true,
-      });
-      const videoTracks = stream.getVideoTracks();
-      const track = videoTracks[0];
-      alert(`Getting video from: ${track.label}`);
-      document.getElementById("video").srcObject = stream;
-    } catch (error) {
-      alert(`${error.name}`);
-      console.error(error);
-    }
-  };
+  // const accessCamera = async () => {
+  //   try {
+  //     const stream = await navigator.mediaDevices.getUserMedia({
+  //       audio: false,
+  //       video: true,
+  //     });
+  //     const videoTracks = stream.getVideoTracks();
+  //     const track = videoTracks[0];
+  //     alert(`Getting video from: ${track.label}`);
+  //     document.getElementById("video").srcObject = stream;
+  //   } catch (error) {
+  //     alert(`${error.name}`);
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <div className="App">

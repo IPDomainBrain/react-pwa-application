@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { QrReader } from "react-qr-reader";
+import React from "react";
+// import { QrReader } from "react-qr-reader";
 import { MdArrowBack, MdOutlineFlashOff } from "react-icons/md";
 
 import "./scanner.css";
 
 const QRScanner = () => {
-  const [data, setdata] = useState();
+  // const [data, setdata] = useState();
 
-  const handleScanned = (result) => {
-    console.log(result);
-  };
+  // const handleScanned = (result) => {
+  //   console.log(result);
+  // };
 
   return (
     <div className="container">
@@ -22,7 +22,7 @@ const QRScanner = () => {
           color="#fff"
         />
       </div>
-      <QrReader
+      {/* <QrReader
         scanDelay={100}
         constraints={{facingMode: "environment"  }}
           onError={(err) => console.log(err)}
@@ -41,7 +41,7 @@ const QRScanner = () => {
             console.info("failed");
           }
         }}
-      />
+      /> */}
     </div>
   );
 };
